@@ -15,9 +15,11 @@ fun main() {
     }
 
     fun part2(input: List<String>): Int {
-        return input.windowed(3,3).sumOf { group ->
-            val (a,b,c) = group
-            val sharedIndex = a.indexOfFirst { aChar -> b.indexOfFirst { it == aChar } != -1 && c.indexOfFirst { it == aChar } != -1 }
+        return input.windowed(3, 3).sumOf { group ->
+            val (a, b, c) = group
+            val sharedIndex = a.indexOfFirst { aChar ->
+                b.indexOfFirst { it == aChar } != -1 && c.indexOfFirst { it == aChar } != -1
+            }
             alphabet.indexOf(a[sharedIndex]) + 1
         }
     }
